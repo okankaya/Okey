@@ -1,0 +1,5 @@
+C:\Users\okankaya\Okey\OkeyServer\OkeyServer\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\okankaya\Okey\OkeyServer\OkeyServer\bin\Debug\OkeyServer.exe
+C:\Users\okankaya\Okey\OkeyServer\OkeyServer\bin\Debug\OkeyServer.pdb
+C:\Users\okankaya\Okey\OkeyServer\OkeyServer\obj\x86\Debug\OkeyServer.exe
+C:\Users\okankaya\Okey\OkeyServer\OkeyServer\obj\x86\Debug\OkeyServer.pdb
