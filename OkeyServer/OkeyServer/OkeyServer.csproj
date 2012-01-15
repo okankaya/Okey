@@ -53,6 +53,9 @@
     <Compile Include="Models\ContestUser.cs" />
     <Compile Include="Models\Game.cs" />
     <Compile Include="Models\Gift.cs" />
+    <Compile Include="Models\Hand.cs" />
+    <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\OkeyDeck.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
