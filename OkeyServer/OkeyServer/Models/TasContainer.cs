@@ -15,7 +15,6 @@ namespace OkeyServer
 
         public TasContainer(string tc, byte okey)
         {
-
             for (int i = 0; i < tc.Length; i++)
             {
                 int tasId = 1;//tc.getInt(i);
