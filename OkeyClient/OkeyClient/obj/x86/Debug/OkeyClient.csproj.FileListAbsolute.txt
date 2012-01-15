@@ -1,0 +1,11 @@
+C:\Users\murat\Desktop\OkeyProj\Okey\OkeyClient\OkeyClient\bin\Debug\OkeyClient.exe
+C:\Users\murat\Desktop\OkeyProj\Okey\OkeyClient\OkeyClient\bin\Debug\OkeyClient.pdb
+C:\Users\murat\Desktop\OkeyProj\Okey\OkeyClient\OkeyClient\obj\x86\Debug\MainWindow.baml
+C:\Users\murat\Desktop\OkeyProj\Okey\OkeyClient\OkeyClient\obj\x86\Debug\MainWindow.g.cs
+C:\Users\murat\Desktop\OkeyProj\Okey\OkeyClient\OkeyClient\obj\x86\Debug\App.g.cs
+C:\Users\murat\Desktop\OkeyProj\Okey\OkeyClient\OkeyClient\obj\x86\Debug\OkeyClient_MarkupCompile.cache
+C:\Users\murat\Desktop\OkeyProj\Okey\OkeyClient\OkeyClient\obj\x86\Debug\OkeyClient.g.resources
+C:\Users\murat\Desktop\OkeyProj\Okey\OkeyClient\OkeyClient\obj\x86\Debug\OkeyClient.Properties.Resources.resources
+C:\Users\murat\Desktop\OkeyProj\Okey\OkeyClient\OkeyClient\obj\x86\Debug\OkeyClient.csproj.GenerateResource.Cache
+C:\Users\murat\Desktop\OkeyProj\Okey\OkeyClient\OkeyClient\obj\x86\Debug\OkeyClient.exe
+C:\Users\murat\Desktop\OkeyProj\Okey\OkeyClient\OkeyClient\obj\x86\Debug\OkeyClient.pdb

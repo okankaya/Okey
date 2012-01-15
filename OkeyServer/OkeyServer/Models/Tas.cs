@@ -2,16 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace OkeyServer
 {
     class Tas
     {
-        public int id = -1;
-        public int renk;
-        public int sayi;
-        public bool sahteOkey = false;
+        private int id = -1;
+        private Color renk;
+        private int sayi;
+        private bool sahteOkey = false;
 
+        /// <summary>
+        /// Public contructor for tas
+        /// </summary>
+        /// <param name="id"></param>
         public Tas(int id)
         {
             this.id = id;
@@ -21,19 +26,19 @@ namespace OkeyServer
                 int rem = id % 52;
                 if (rem < 13)
                 {
-                    this.renk = 0xBB2222;
+                    this.renk = Color.Red;
                 }
                 else if (rem < 26)
                 {
-                    this.renk = 0x2288BB;
+                    this.renk = Color.Blue;
                 }
                 else if (rem < 39)
                 {
-                    this.renk = 0x444444;
+                    this.renk = Color.Black;
                 }
                 else if (rem < 52)
                 {
-                    this.renk = 0x88BB22;
+                    this.renk = Color.Green;
                 }
 
                 this.sayi = (rem % 13) + 1;
@@ -41,7 +46,7 @@ namespace OkeyServer
             else
             {
                 sahteOkey = true;
-                this.renk = 0;
+                this.renk = Color.White;
                 this.sayi = 0;
             }
         }
