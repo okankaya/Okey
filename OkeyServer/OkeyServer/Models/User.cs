@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace OkeyServer
 {
     class User
     {
+
+        //Public properties
         //private static final Logger logger = Logger.getLogger(User.class);
 	    public long uid { get; set; }
 	    public String name { get; set; }
@@ -36,8 +40,6 @@ namespace OkeyServer
 	    public bool isChannelShared { get; set; }
 	    public int purchased { get; set; }
 	    public int cityId { get; set; }
-
-	    // stats
 	    public int consecutiveWins { get; set; }
 	    public int firstGamePlayed { get; set; }
 	    public int consecutiveLogins { get; set; }
@@ -50,7 +52,11 @@ namespace OkeyServer
 	    public int maxChipsWon { get; set; }
 	    public int maxChips { get; set; }
 	
-	
+	    /// <summary>
+	    /// Public constructor for user
+	    /// </summary>
+	    /// <param name="uid"></param>
+	    /// <param name="chips"></param>
 	    public User(long uid, long chips) 
         {
 		    this.uid = uid;
