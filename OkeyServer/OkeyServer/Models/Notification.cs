@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 
 namespace OkeyServer.Models {
-    class Notification {
+    class Notification
+    {
         //Public properties
         public int id { get; set; }
         public long fromUid { get; set; }
@@ -14,5 +15,11 @@ namespace OkeyServer.Models {
         public string message { get; set; }
         public DateTime date { get; set; }
         public int responded { get; set; }
+
+
+        public Notification() { }
+
+
+
     }
 }

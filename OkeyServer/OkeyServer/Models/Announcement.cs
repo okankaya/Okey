@@ -23,9 +23,9 @@ namespace OkeyServer
         /// <param name="date"></param>
         public Announcement(int myId, String myText, DateTime myDate)
         {
-            id = myId;
-            text = myText;
-            date = myDate;
+            this.id = myId;
+            this.text = myText;
+            this.date = myDate;
         }
 
     }

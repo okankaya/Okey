@@ -57,6 +57,7 @@
     <Compile Include="Models\Notification.cs" />
     <Compile Include="Models\OkeyDeck.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\StoreItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Tas.cs" />
