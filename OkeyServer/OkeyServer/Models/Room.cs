@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 
 namespace OkeyServer.Models {
-    class Room {
-        //private ConcurrentHashMap<Long, Game> pendingGames;
-	    //private ConcurrentHashMap<Long, Game> playingGames;
-	    //private ConcurrentHashMap<Long, User> users;
+    class Room 
+    {
+        private Dictionary<long, Game> pendingGames;
+	    private Dictionary<long, Game> playingGames;
+	    private Dictionary<long, User> users;
 
         public long id { get; set; }
 
@@ -20,8 +21,8 @@ namespace OkeyServer.Models {
         public long maxStarterChips { get; private set; }
 
         private bool vip;
-        //	private List<Long> staticGameValues = new ArrayList<Long>();
-        //	private List<Game> staticGameList = new ArrayList<Game>();
+        private List<long> staticGameValues = new List<long>();
+        private List<Game> staticGameList = new List<Game>();
         
         //private JSONArray allGameList;
 	    private long roomDataUpdateTime;

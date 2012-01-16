@@ -66,7 +66,7 @@ namespace OkeyServer {
         public static const string STORE_BUY_ITEM = "eab";
         public static const string STORE_GET_ITEMS = "eac";
 
-        public static enum floodTypes {
+        public enum floodTypes {
             GAME_READY = 2001,
             GAME_TAKE = 2002,
             GAME_THROW = 2003,
@@ -77,7 +77,7 @@ namespace OkeyServer {
         }
         	
 	    // userStatuses
-	    public static enum userStatuses {
+	    public enum userStatuses {
 		    OFFLINE = 0,
 		    ONLINE 	= 1,
 		    WAITING = 2,
@@ -85,7 +85,7 @@ namespace OkeyServer {
 	    }
 	
         // User types
-	    public static enum userTypes {
+	    public enum userTypes {
 		    USER = 0,
 		    VIP = 1,
 		    MODERATOR = 2,
@@ -94,7 +94,7 @@ namespace OkeyServer {
 		    BANNED  = 99
 	    }
 	
-	    public static enum feedTypes {
+	    public enum feedTypes {
 		    GAME_WON = 0,
 		    GAME_LOST = 1,
 		    FRIEND_BEATED = 2,
@@ -104,7 +104,7 @@ namespace OkeyServer {
 		    //int PLAYING_GAME			= 6;
 	    }
 	
-	    public static enum dailyBonus {
+	    public enum dailyBonus {
 		    ONE	= 500,
 		    TWO	= 600,
 		    THREE = 700,

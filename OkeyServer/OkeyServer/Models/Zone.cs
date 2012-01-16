@@ -4,24 +4,27 @@ using System.Linq;
 using System.Text;
 
 namespace OkeyServer.Models {
-    class Zone {
+    class Zone 
+    {
         // Properties
         public long id { get; set; }
         public string name { get; set; }
 
-        //private HashMap<Long, Room> rooms = new HashMap<Long, Room>();
+        private Dictionary<long, Room> rooms = new Dictionary<long, Room>();
 	    //private JSONArray roomInfo;
 	    private long roomInfoUpdateTime;
 	    //private final Object roomInfoLock = new Object();
 
-	    public Zone(long id, String name) {
+	    public Zone(long id, String name) 
+        {
 		    this.id = id;
 		    this.name = name;
 	    }
 
-	    /*public Room addRoom(Room room) {
-		    return rooms.put(room.getId(), room);
-	    }*/
+	    public Room addRoom(Room room) 
+        {
+		    return rooms.Add(room.id, room);
+	    }
 	
 	    /*public JSONArray getRoomInfo() throws JSONException
 	    {

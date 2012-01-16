@@ -20,7 +20,7 @@ namespace OkeyServer.Models
         {
             //gameID = Database'deki en son numara + 1
             owner = u;
-            isVIP = u.isVIP;
+            this.isVIP = isVIP;
             gameCost = cost;
             gameStart = false;
 
