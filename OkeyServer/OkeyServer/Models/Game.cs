@@ -16,8 +16,6 @@ namespace OkeyServer.Models
         public List<User> spectators = new List<User>();
         public Dictionary<int, User> userList = new Dictionary<int, User>();
 
-        public Game() { }
-
         public Game(User u, long cost)
         {
             //gameID = Database'deki en son numara + 1
