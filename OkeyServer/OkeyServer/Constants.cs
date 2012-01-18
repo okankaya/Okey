@@ -5,66 +5,66 @@ using System.Text;
 
 namespace OkeyServer {
     public static class Constants {
-        public static const string SERVER_AUTHORIZE = "aaa";
-        public static const string SERVER_JOINROOM = "aab";
-        public static const string SERVER_JOINGAME = "aac";
-        public static const string SERVER_JOINFRIENDGAME = "aad";
-        public static const string SERVER_CREATEGAME = "aae";
-        public static const string SERVER_GETROOMDATA = "aaf";
-        public static const string SERVER_RETURNTOROOM = "aag";
-        public static const string SERVER_STARTGAME = "aah";
-        public static const string SERVER_GETROOMS = "aai";
-        public static const string SERVER_GETCHIPS = "aak";
-        public static const string SERVER_LEAVEROOM = "aal";
-        public static const string SERVER_SIT = "aam";
-        public static const string SERVER_PLAYNOW = "aan";
-        public static const string SERVER_SHOUT = "aao";
-        public static const string SERVER_LEADERBOARD = "aap";
-        public static const string SERVER_SENDGIFT = "aar";
-        public static const string SERVER_FEED = "aat";
-        public static const string SERVER_GET_PROFILE = "aas";
-        public static const string SERVER_GETCOMPLAINTS = "aau";
-        public static const string SERVER_GETCOMPLAINT = "aav";
-        public static const string SERVER_DELETECOMPLAINTS = "aay";
-        public static const string SERVER_COMPLAIN = "aaz";
-        public static const string SERVER_GET_CONTEST_LIST = "aba";
-        public static const string SERVER_JOIN_CONTEST = "abb";
-        public static const string SERVER_MODIFYSTATUS = "abc";
-        public static const string SERVER_PENALIZEDLIST = "abd";
-        public static const string SERVER_NOW_PLAYING = "abe";
-        public static const string SERVER_CHECK_ONLINE = "abf";
-        public static const string SERVER_RESPOND_NOTIF = "abg";
-        public static const string SERVER_REMOVE_GAME = "abh";
-        public static const string SERVER_SET_HAPPY_HOUR = "abi";
-        public static const string SERVER_UPDATE_CITY = "abj";
-        public static const string SERVER_FRIENDREQ = "abk";
-        public static const string SERVER_FRIENDAPP = "abl";
-        public static const string SERVER_FRIENDDEL = "abm";
-        public static const string SERVER_FRIENDLIST = "abn";
-                      
-        public static const string GAME_TAKE = "baa";
-        public static const string GAME_THROW = "bab";
-        public static const string GAME_CHAT = "bac";
-        public static const string GAME_DOUBLE = "bad";
-        public static const string GAME_COMPLETE = "bae";
-        public static const string GAME_CHECKTIMEOUT = "baf";
-        public static const string GAME_GOSTERGE = "bag";
+        public const string SERVER_AUTHORIZE = "aaa";
+        public const string SERVER_JOINROOM = "aab";
+        public const string SERVER_JOINGAME = "aac";
+        public const string SERVER_JOINFRIENDGAME = "aad";
+        public const string SERVER_CREATEGAME = "aae";
+        public const string SERVER_GETROOMDATA = "aaf";
+        public const string SERVER_RETURNTOROOM = "aag";
+        public const string SERVER_STARTGAME = "aah";
+        public const string SERVER_GETROOMS = "aai";
+        public const string SERVER_GETCHIPS = "aak";
+        public const string SERVER_LEAVEROOM = "aal";
+        public const string SERVER_SIT = "aam";
+        public const string SERVER_PLAYNOW = "aan";
+        public const string SERVER_SHOUT = "aao";
+        public const string SERVER_LEADERBOARD = "aap";
+        public const string SERVER_SENDGIFT = "aar";
+        public const string SERVER_FEED = "aat";
+        public const string SERVER_GET_PROFILE = "aas";
+        public const string SERVER_GETCOMPLAINTS = "aau";
+        public const string SERVER_GETCOMPLAINT = "aav";
+        public const string SERVER_DELETECOMPLAINTS = "aay";
+        public const string SERVER_COMPLAIN = "aaz";
+        public const string SERVER_GET_CONTEST_LIST = "aba";
+        public const string SERVER_JOIN_CONTEST = "abb";
+        public const string SERVER_MODIFYSTATUS = "abc";
+        public const string SERVER_PENALIZEDLIST = "abd";
+        public const string SERVER_NOW_PLAYING = "abe";
+        public const string SERVER_CHECK_ONLINE = "abf";
+        public const string SERVER_RESPOND_NOTIF = "abg";
+        public const string SERVER_REMOVE_GAME = "abh";
+        public const string SERVER_SET_HAPPY_HOUR = "abi";
+        public const string SERVER_UPDATE_CITY = "abj";
+        public const string SERVER_FRIENDREQ = "abk";
+        public const string SERVER_FRIENDAPP = "abl";
+        public const string SERVER_FRIENDDEL = "abm";
+        public const string SERVER_FRIENDLIST = "abn";
+               
+        public const string GAME_TAKE = "baa";
+        public const string GAME_THROW = "bab";
+        public const string GAME_CHAT = "bac";
+        public const string GAME_DOUBLE = "bad";
+        public const string GAME_COMPLETE = "bae";
+        public const string GAME_CHECKTIMEOUT = "baf";
+        public const string GAME_GOSTERGE = "bag";
 
-        public static const string CLIENT_PLAYERCAME = "caa";
-        public static const string CLIENT_PLAYERLEFT = "cab";
-        public static const string CLIENT_STARTGAME = "cac";
-        public static const string CLIENT_PLAYERSIT = "cad";
-        public static const string CLIENT_PLAYERSTAND = "cae";
-        public static const string CLIENT_RECEIVEGIFT = "caf";
-        public static const string CLIENT_FRIENDSTATUS = "cag";
-        public static const string CLIENT_ANNOUNCEMENT = "cah";
-                      
-        public static const string ADMIN_CHAT_ACTION = "daa";
-        public static const string ADMIN_CHAT_MESSAGE = "dab";
-                      
-        public static const string STORE_GET_INVENTORY = "eaa";
-        public static const string STORE_BUY_ITEM = "eab";
-        public static const string STORE_GET_ITEMS = "eac";
+        public const string CLIENT_PLAYERCAME = "caa";
+        public const string CLIENT_PLAYERLEFT = "cab";
+        public const string CLIENT_STARTGAME = "cac";
+        public const string CLIENT_PLAYERSIT = "cad";
+        public const string CLIENT_PLAYERSTAND = "cae";
+        public const string CLIENT_RECEIVEGIFT = "caf";
+        public const string CLIENT_FRIENDSTATUS = "cag";
+        public const string CLIENT_ANNOUNCEMENT = "cah";
+               
+        public const string ADMIN_CHAT_ACTION = "daa";
+        public const string ADMIN_CHAT_MESSAGE = "dab";
+               
+        public const string STORE_GET_INVENTORY = "eaa";
+        public const string STORE_BUY_ITEM = "eab";
+        public const string STORE_GET_ITEMS = "eac";
 
         public enum floodTypes {
             GAME_READY = 2001,
@@ -112,8 +112,8 @@ namespace OkeyServer {
 		    FIVE = 1000
 	    }
 
-	    public static const string apiKey = "14b5abb73359956859e375f765a3177b";
-    	public static const string apiSecret = "bace65ba8cfd9d5eae83f4d8be1f842c";
+	    public const string apiKey = "14b5abb73359956859e375f765a3177b";
+    	public const string apiSecret = "bace65ba8cfd9d5eae83f4d8be1f842c";
 
 	    /***** Eskiler *****/	
 	    public static string CROSSDOMAIN_POLICY_REQUEST;
