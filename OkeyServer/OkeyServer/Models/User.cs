@@ -81,7 +81,7 @@ namespace OkeyServer
 	    }
 
         //public JSONObject initRoster(GServer gServer, JSONArray fbIds, JSONArray opIds) throws JSONException {
-        //    JSONObject onlineResponse = new JSONObject();
+        //   JSONObject onlineResponse = new JSONObject();
         //    String offlineQuery = "(0";
         //    boolean offlineFound = false;
         //    int fbRosterSize = fbIds.length();
