@@ -21,10 +21,10 @@ namespace OkeyServer.Models {
 		    this.name = name;
 	    }
 
-	    public Room addRoom(Room room) 
+	    /*public Room addRoom(Room room) 
         {
 		    return rooms.Add(room.id, room);
-	    }
+	    }*/
 	
 	    /*public JSONArray getRoomInfo() throws JSONException
 	    {

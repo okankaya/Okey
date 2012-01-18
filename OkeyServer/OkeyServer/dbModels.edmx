@@ -1,0 +1,1148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbModels.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="dbModelsStoreContainer">
+          <EntitySet Name="announcements" EntityType="dbModels.Store.announcements" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="chatmessages" EntityType="dbModels.Store.chatmessages" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="chiphistory" EntityType="dbModels.Store.chiphistory" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="complaints" EntityType="dbModels.Store.complaints" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="contestusers" EntityType="dbModels.Store.contestusers" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="events" EntityType="dbModels.Store.events" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="feedhistory" EntityType="dbModels.Store.feedhistory" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="friends" EntityType="dbModels.Store.friends" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="gamehistory" EntityType="dbModels.Store.gamehistory" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="gifts" EntityType="dbModels.Store.gifts" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="inventories" EntityType="dbModels.Store.inventories" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="invites" EntityType="dbModels.Store.invites" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="notifications" EntityType="dbModels.Store.notifications" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="products" EntityType="dbModels.Store.products" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="purchases" EntityType="dbModels.Store.purchases" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="refs" EntityType="dbModels.Store.refs" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="requests" EntityType="dbModels.Store.requests" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="rooms" EntityType="dbModels.Store.rooms" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="stats" EntityType="dbModels.Store.stats" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="storeitems" EntityType="dbModels.Store.storeitems" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="usergifts" EntityType="dbModels.Store.usergifts" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="users" EntityType="dbModels.Store.users" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="userstats" EntityType="dbModels.Store.userstats" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="weeklytops" EntityType="dbModels.Store.weeklytops" store:Type="Tables" Schema="okey" />
+          <EntitySet Name="zones" EntityType="dbModels.Store.zones" store:Type="Tables" Schema="okey" />
+        </EntityContainer>
+        <EntityType Name="announcements">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="varchar" MaxLength="256" />
+          <Property Name="text" Type="varchar" MaxLength="1024" />
+          <Property Name="featured" Type="tinyint" />
+          <Property Name="imageUrl" Type="varchar" MaxLength="256" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="actionLabel" Type="varchar" MaxLength="256" />
+          <Property Name="actionPage" Type="varchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="chatmessages">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="uid" Type="bigint" />
+          <Property Name="gameId" Type="int" />
+          <Property Name="message" Type="varchar" MaxLength="512" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="chiphistory">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="uid" Type="bigint" Nullable="false" />
+          <Property Name="gameId" Type="int" />
+          <Property Name="netChange" Type="bigint" />
+          <Property Name="createDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="complaints">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="reporter" Type="bigint" />
+          <Property Name="reported" Type="bigint" />
+          <Property Name="type" Type="varchar" MaxLength="20" />
+          <Property Name="chatLog" Type="varchar" MaxLength="1024" />
+          <Property Name="comment" Type="varchar" MaxLength="1024" />
+          <Property Name="createDate" Type="datetime" />
+          <Property Name="action" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="contestusers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="contestId" Type="int" Nullable="false" />
+          <Property Name="uid" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="events">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ip" Type="varchar" MaxLength="100" />
+          <Property Name="profileId" Type="bigint" />
+          <Property Name="eventName" Type="varchar" MaxLength="30" />
+          <Property Name="value" Type="varchar" MaxLength="11" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="feedhistory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fieldType" Type="int" />
+          <Property Name="feedOwner" Type="bigint" />
+          <Property Name="uid" Type="bigint" />
+          <Property Name="name" Type="varchar" MaxLength="128" />
+          <Property Name="fuid" Type="bigint" />
+          <Property Name="chipDiff" Type="int" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="friends">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="uid" />
+            <PropertyRef Name="fuid" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="uid" Type="bigint" Nullable="false" />
+          <Property Name="fuid" Type="bigint" Nullable="false" />
+          <Property Name="status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gamehistory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="gameId" Type="int" />
+          <Property Name="gameCost" Type="int" />
+          <Property Name="gamePot" Type="int" />
+          <Property Name="isOkey" Type="tinyint" />
+          <Property Name="isCifte" Type="tinyint" />
+          <Property Name="isSeri" Type="tinyint" />
+          <Property Name="userCount" Type="tinyint" />
+          <Property Name="user1" Type="bigint" />
+          <Property Name="user2" Type="bigint" />
+          <Property Name="user3" Type="bigint" />
+          <Property Name="user4" Type="bigint" />
+          <Property Name="winner" Type="bigint" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="gifts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="cost" Type="double" />
+          <Property Name="className" Type="varchar" MaxLength="100" />
+          <Property Name="categoryId" Type="int" />
+          <Property Name="gender" Type="varchar" MaxLength="7" />
+          <Property Name="costType" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="inventories">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="uid" Type="bigint" Nullable="false" />
+          <Property Name="type" Type="int" />
+          <Property Name="itemId" Type="int" />
+          <Property Name="expireDate" Type="datetime" />
+          <Property Name="isEquipped" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="invites">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="requestId" Type="varchar" MaxLength="32" />
+          <Property Name="fromUid" Type="bigint" />
+          <Property Name="toUid" Type="bigint" />
+          <Property Name="accepted" Type="tinyint" />
+          <Property Name="sendDate" Type="datetime" />
+          <Property Name="acceptDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="notifications">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="toUid" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fromUid" Type="bigint" Nullable="false" />
+          <Property Name="fromName" Type="varchar" MaxLength="128" />
+          <Property Name="toUid" Type="bigint" Nullable="false" />
+          <Property Name="type" Type="int" />
+          <Property Name="message" Type="varchar" MaxLength="128" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="responded" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="products">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="varchar" MaxLength="200" />
+          <Property Name="text" Type="varchar" MaxLength="200" />
+          <Property Name="chips" Type="int" />
+          <Property Name="fbCredits" Type="int" />
+          <Property Name="realMoney" Type="double" />
+          <Property Name="discountMoney" Type="double" />
+          <Property Name="discountFbCredits" Type="int" />
+          <Property Name="discountEnabled" Type="tinyint" />
+          <Property Name="imageUrl" Type="varchar" MaxLength="200" />
+          <Property Name="productUrl" Type="varchar" MaxLength="200" />
+          <Property Name="storeId" Type="int" />
+        </EntityType>
+        <EntityType Name="purchases">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="profileId" Type="bigint" Nullable="false" />
+          <Property Name="itemId" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="refs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ip" Type="varchar" MaxLength="100" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="ref" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="requests">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="reqId" Type="varchar" MaxLength="255" />
+          <Property Name="reqType" Type="tinyint" />
+          <Property Name="from" Type="bigint" />
+          <Property Name="to" Type="bigint" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="rooms">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="zoneId" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="80" />
+          <Property Name="maxUsers" Type="int" />
+          <Property Name="minChips" Type="bigint" />
+          <Property Name="priority" Type="int" />
+          <Property Name="maxChips" Type="bigint" />
+          <Property Name="minEntry" Type="bigint" />
+          <Property Name="static1" Type="bigint" />
+          <Property Name="static2" Type="bigint" />
+          <Property Name="static3" Type="bigint" />
+          <Property Name="static4" Type="bigint" />
+          <Property Name="static5" Type="bigint" />
+        </EntityType>
+        <EntityType Name="stats">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="code" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="value" Type="varchar" MaxLength="50" />
+          <Property Name="createDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="storeitems">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="128" />
+          <Property Name="description" Type="varchar" MaxLength="1024" />
+          <Property Name="className" Type="varchar" MaxLength="128" />
+          <Property Name="type" Type="tinyint" />
+          <Property Name="isExpirable" Type="tinyint" />
+          <Property Name="isLimitedTime" Type="tinyint" />
+          <Property Name="isLimitedCount" Type="tinyint" />
+          <Property Name="expirePeriod" Type="int" />
+          <Property Name="startDate" Type="datetime" />
+          <Property Name="endDate" Type="datetime" />
+          <Property Name="itemsLeft" Type="int" />
+          <Property Name="cost" Type="int" />
+          <Property Name="fbCost" Type="int" />
+          <Property Name="fbRentCost" Type="int" />
+          <Property Name="friendCost" Type="int" />
+          <Property Name="featured" Type="tinyint" />
+          <Property Name="productId" Type="int" />
+        </EntityType>
+        <EntityType Name="usergifts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="giftId" Type="int" Nullable="false" />
+          <Property Name="fromId" Type="bigint" Nullable="false" />
+          <Property Name="toId" Type="bigint" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+          <Property Name="createDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="uid" Type="bigint" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="gender" Type="varchar" MaxLength="100" />
+          <Property Name="birthDate" Type="datetime" />
+          <Property Name="chips" Type="int" />
+          <Property Name="lastSeen" Type="datetime" />
+          <Property Name="status" Type="tinyint" />
+          <Property Name="suspendTill" Type="datetime" />
+          <Property Name="lastBonusGiven" Type="datetime" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="friendCount" Type="int" />
+          <Property Name="registrationDate" Type="datetime" />
+          <Property Name="ref" Type="varchar" MaxLength="255" />
+          <Property Name="inviter" Type="varchar" MaxLength="255" />
+          <Property Name="lastIp" Type="varchar" MaxLength="255" />
+          <Property Name="oldChips" Type="int" />
+          <Property Name="purchased" Type="tinyint" />
+          <Property Name="cidtyId" Type="int" />
+          <Property Name="grandPrizeGiven" Type="tinyint" />
+          <Property Name="recommended" Type="int" />
+          <Property Name="gameCntBonusToday" Type="int" />
+          <Property Name="weekStartChips" Type="int" />
+        </EntityType>
+        <EntityType Name="userstats">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="profileId" Type="bigint" Nullable="false" />
+          <Property Name="uid" Type="bigint" Nullable="false" />
+          <Property Name="firstGamePlayed" Type="int" />
+          <Property Name="consecutiveWins" Type="int" />
+          <Property Name="maxConsecutiveWins" Type="int" />
+          <Property Name="consecutiveLogins" Type="int" />
+          <Property Name="gamesPlayed" Type="int" />
+          <Property Name="gamesWon" Type="int" />
+          <Property Name="gamesRisky" Type="int" />
+          <Property Name="gamesRiskyWon" Type="int" />
+          <Property Name="gamesRiskyLost" Type="int" />
+          <Property Name="maxChipsWon" Type="int" />
+          <Property Name="maxChips" Type="int" />
+          <Property Name="gamesPlayedDaily" Type="int" />
+        </EntityType>
+        <EntityType Name="weeklytops">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="profileId" Type="int" />
+          <Property Name="uid" Type="bigint" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="chips" Type="int" />
+          <Property Name="weekStartChips" Type="int" />
+          <Property Name="delta" Type="int" />
+        </EntityType>
+        <EntityType Name="zones">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="varchar" MaxLength="80" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="dbModels" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="dbModelsContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="announcements" EntityType="dbModels.announcement" />
+          <EntitySet Name="chatmessages" EntityType="dbModels.chatmessage" />
+          <EntitySet Name="chiphistories" EntityType="dbModels.chiphistory" />
+          <EntitySet Name="complaints" EntityType="dbModels.complaint" />
+          <EntitySet Name="contestusers" EntityType="dbModels.contestuser" />
+          <EntitySet Name="events" EntityType="dbModels.event" />
+          <EntitySet Name="feedhistories" EntityType="dbModels.feedhistory" />
+          <EntitySet Name="friends" EntityType="dbModels.friend" />
+          <EntitySet Name="gamehistories" EntityType="dbModels.gamehistory" />
+          <EntitySet Name="gifts" EntityType="dbModels.gift" />
+          <EntitySet Name="inventories" EntityType="dbModels.inventory" />
+          <EntitySet Name="invites" EntityType="dbModels.invite" />
+          <EntitySet Name="notifications" EntityType="dbModels.notification" />
+          <EntitySet Name="products" EntityType="dbModels.product" />
+          <EntitySet Name="purchases" EntityType="dbModels.purchase" />
+          <EntitySet Name="refs" EntityType="dbModels.ref" />
+          <EntitySet Name="requests" EntityType="dbModels.request" />
+          <EntitySet Name="rooms" EntityType="dbModels.room" />
+          <EntitySet Name="stats" EntityType="dbModels.stat" />
+          <EntitySet Name="storeitems" EntityType="dbModels.storeitem" />
+          <EntitySet Name="usergifts" EntityType="dbModels.usergift" />
+          <EntitySet Name="users" EntityType="dbModels.user" />
+          <EntitySet Name="userstats" EntityType="dbModels.userstat" />
+          <EntitySet Name="weeklytops" EntityType="dbModels.weeklytop" />
+          <EntitySet Name="zones" EntityType="dbModels.zone" />
+        </EntityContainer>
+        <EntityType Name="announcement">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="title" />
+          <Property Type="String" Name="text" />
+          <Property Type="SByte" Name="featured" />
+          <Property Type="String" Name="imageUrl" />
+          <Property Type="DateTime" Name="date" />
+          <Property Type="String" Name="actionLabel" />
+          <Property Type="String" Name="actionPage" />
+        </EntityType>
+        <EntityType Name="chatmessage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="uid" />
+          <Property Type="Int32" Name="gameId" />
+          <Property Type="String" Name="message" />
+          <Property Type="DateTime" Name="date" />
+        </EntityType>
+        <EntityType Name="chiphistory">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="uid" Nullable="false" />
+          <Property Type="Int32" Name="gameId" />
+          <Property Type="Int64" Name="netChange" />
+          <Property Type="DateTime" Name="createDate" />
+        </EntityType>
+        <EntityType Name="complaint">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="reporter" />
+          <Property Type="Int64" Name="reported" />
+          <Property Type="String" Name="type" />
+          <Property Type="String" Name="chatLog" />
+          <Property Type="String" Name="comment" />
+          <Property Type="DateTime" Name="createDate" />
+          <Property Type="SByte" Name="action" />
+        </EntityType>
+        <EntityType Name="contestuser">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="contestId" Nullable="false" />
+          <Property Type="Int64" Name="uid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="event">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ip" />
+          <Property Type="Int64" Name="profileId" />
+          <Property Type="String" Name="eventName" />
+          <Property Type="String" Name="value" />
+          <Property Type="DateTime" Name="date" />
+        </EntityType>
+        <EntityType Name="feedhistory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="fieldType" />
+          <Property Type="Int64" Name="feedOwner" />
+          <Property Type="Int64" Name="uid" />
+          <Property Type="String" Name="name" />
+          <Property Type="Int64" Name="fuid" />
+          <Property Type="Int32" Name="chipDiff" />
+          <Property Type="DateTime" Name="date" />
+        </EntityType>
+        <EntityType Name="friend">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="uid" />
+            <PropertyRef Name="fuid" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="uid" Nullable="false" />
+          <Property Type="Int64" Name="fuid" Nullable="false" />
+          <Property Type="Int32" Name="status" Nullable="false" />
+        </EntityType>
+        <EntityType Name="gamehistory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="gameId" />
+          <Property Type="Int32" Name="gameCost" />
+          <Property Type="Int32" Name="gamePot" />
+          <Property Type="SByte" Name="isOkey" />
+          <Property Type="SByte" Name="isCifte" />
+          <Property Type="SByte" Name="isSeri" />
+          <Property Type="SByte" Name="userCount" />
+          <Property Type="Int64" Name="user1" />
+          <Property Type="Int64" Name="user2" />
+          <Property Type="Int64" Name="user3" />
+          <Property Type="Int64" Name="user4" />
+          <Property Type="Int64" Name="winner" />
+          <Property Type="DateTime" Name="date" />
+        </EntityType>
+        <EntityType Name="gift">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" Nullable="false" />
+          <Property Type="Double" Name="cost" />
+          <Property Type="String" Name="className" />
+          <Property Type="Int32" Name="categoryId" />
+          <Property Type="String" Name="gender" />
+          <Property Type="SByte" Name="costType" />
+        </EntityType>
+        <EntityType Name="inventory">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="uid" Nullable="false" />
+          <Property Type="Int32" Name="type" />
+          <Property Type="Int32" Name="itemId" />
+          <Property Type="DateTime" Name="expireDate" />
+          <Property Type="SByte" Name="isEquipped" />
+        </EntityType>
+        <EntityType Name="invite">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="requestId" />
+          <Property Type="Int64" Name="fromUid" />
+          <Property Type="Int64" Name="toUid" />
+          <Property Type="SByte" Name="accepted" />
+          <Property Type="DateTime" Name="sendDate" />
+          <Property Type="DateTime" Name="acceptDate" />
+        </EntityType>
+        <EntityType Name="notification">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="toUid" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="fromUid" Nullable="false" />
+          <Property Type="String" Name="fromName" />
+          <Property Type="Int64" Name="toUid" Nullable="false" />
+          <Property Type="Int32" Name="type" />
+          <Property Type="String" Name="message" />
+          <Property Type="DateTime" Name="date" />
+          <Property Type="SByte" Name="responded" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="title" />
+          <Property Type="String" Name="text" />
+          <Property Type="Int32" Name="chips" />
+          <Property Type="Int32" Name="fbCredits" />
+          <Property Type="Double" Name="realMoney" />
+          <Property Type="Double" Name="discountMoney" />
+          <Property Type="Int32" Name="discountFbCredits" />
+          <Property Type="SByte" Name="discountEnabled" />
+          <Property Type="String" Name="imageUrl" />
+          <Property Type="String" Name="productUrl" />
+          <Property Type="Int32" Name="storeId" />
+        </EntityType>
+        <EntityType Name="purchase">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="profileId" Nullable="false" />
+          <Property Type="Int32" Name="itemId" Nullable="false" />
+          <Property Type="DateTime" Name="date" />
+        </EntityType>
+        <EntityType Name="ref">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ip" />
+          <Property Type="DateTime" Name="date" />
+          <Property Type="String" Name="ref1" />
+        </EntityType>
+        <EntityType Name="request">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="reqId" />
+          <Property Type="SByte" Name="reqType" />
+          <Property Type="Int64" Name="from" />
+          <Property Type="Int64" Name="to" />
+          <Property Type="DateTime" Name="date" />
+        </EntityType>
+        <EntityType Name="room">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="zoneId" Nullable="false" />
+          <Property Type="String" Name="name" />
+          <Property Type="Int32" Name="maxUsers" />
+          <Property Type="Int64" Name="minChips" />
+          <Property Type="Int32" Name="priority" />
+          <Property Type="Int64" Name="maxChips" />
+          <Property Type="Int64" Name="minEntry" />
+          <Property Type="Int64" Name="static1" />
+          <Property Type="Int64" Name="static2" />
+          <Property Type="Int64" Name="static3" />
+          <Property Type="Int64" Name="static4" />
+          <Property Type="Int64" Name="static5" />
+        </EntityType>
+        <EntityType Name="stat">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="code" Nullable="false" />
+          <Property Type="String" Name="value" />
+          <Property Type="DateTime" Name="createDate" />
+        </EntityType>
+        <EntityType Name="storeitem">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" />
+          <Property Type="String" Name="description" />
+          <Property Type="String" Name="className" />
+          <Property Type="SByte" Name="type" />
+          <Property Type="SByte" Name="isExpirable" />
+          <Property Type="SByte" Name="isLimitedTime" />
+          <Property Type="SByte" Name="isLimitedCount" />
+          <Property Type="Int32" Name="expirePeriod" />
+          <Property Type="DateTime" Name="startDate" />
+          <Property Type="DateTime" Name="endDate" />
+          <Property Type="Int32" Name="itemsLeft" />
+          <Property Type="Int32" Name="cost" />
+          <Property Type="Int32" Name="fbCost" />
+          <Property Type="Int32" Name="fbRentCost" />
+          <Property Type="Int32" Name="friendCost" />
+          <Property Type="SByte" Name="featured" />
+          <Property Type="Int32" Name="productId" />
+        </EntityType>
+        <EntityType Name="usergift">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="giftId" Nullable="false" />
+          <Property Type="Int64" Name="fromId" Nullable="false" />
+          <Property Type="Int64" Name="toId" Nullable="false" />
+          <Property Type="Int32" Name="price" Nullable="false" />
+          <Property Type="DateTime" Name="createDate" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="uid" Nullable="false" />
+          <Property Type="String" Name="email" />
+          <Property Type="String" Name="gender" />
+          <Property Type="DateTime" Name="birthDate" />
+          <Property Type="Int32" Name="chips" />
+          <Property Type="DateTime" Name="lastSeen" />
+          <Property Type="SByte" Name="status" />
+          <Property Type="DateTime" Name="suspendTill" />
+          <Property Type="DateTime" Name="lastBonusGiven" />
+          <Property Type="String" Name="name" />
+          <Property Type="Int32" Name="friendCount" />
+          <Property Type="DateTime" Name="registrationDate" />
+          <Property Type="String" Name="ref" />
+          <Property Type="String" Name="inviter" />
+          <Property Type="String" Name="lastIp" />
+          <Property Type="Int32" Name="oldChips" />
+          <Property Type="SByte" Name="purchased" />
+          <Property Type="Int32" Name="cidtyId" />
+          <Property Type="SByte" Name="grandPrizeGiven" />
+          <Property Type="Int32" Name="recommended" />
+          <Property Type="Int32" Name="gameCntBonusToday" />
+          <Property Type="Int32" Name="weekStartChips" />
+        </EntityType>
+        <EntityType Name="userstat">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="profileId" Nullable="false" />
+          <Property Type="Int64" Name="uid" Nullable="false" />
+          <Property Type="Int32" Name="firstGamePlayed" />
+          <Property Type="Int32" Name="consecutiveWins" />
+          <Property Type="Int32" Name="maxConsecutiveWins" />
+          <Property Type="Int32" Name="consecutiveLogins" />
+          <Property Type="Int32" Name="gamesPlayed" />
+          <Property Type="Int32" Name="gamesWon" />
+          <Property Type="Int32" Name="gamesRisky" />
+          <Property Type="Int32" Name="gamesRiskyWon" />
+          <Property Type="Int32" Name="gamesRiskyLost" />
+          <Property Type="Int32" Name="maxChipsWon" />
+          <Property Type="Int32" Name="maxChips" />
+          <Property Type="Int32" Name="gamesPlayedDaily" />
+        </EntityType>
+        <EntityType Name="weeklytop">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="profileId" />
+          <Property Type="Int64" Name="uid" Nullable="false" />
+          <Property Type="String" Name="name" />
+          <Property Type="Int32" Name="chips" />
+          <Property Type="Int32" Name="weekStartChips" />
+          <Property Type="Int32" Name="delta" />
+        </EntityType>
+        <EntityType Name="zone">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="name" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="dbModels" />
+        <Alias Key="Target" Value="dbModels.Store" />
+        <EntityContainerMapping CdmEntityContainer="dbModelsContainer" StorageEntityContainer="dbModelsStoreContainer">
+          <EntitySetMapping Name="announcements">
+            <EntityTypeMapping TypeName="dbModels.announcement">
+              <MappingFragment StoreEntitySet="announcements">
+                <ScalarProperty Name="actionPage" ColumnName="actionPage" />
+                <ScalarProperty Name="actionLabel" ColumnName="actionLabel" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="imageUrl" ColumnName="imageUrl" />
+                <ScalarProperty Name="featured" ColumnName="featured" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="chatmessages">
+            <EntityTypeMapping TypeName="dbModels.chatmessage">
+              <MappingFragment StoreEntitySet="chatmessages">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="gameId" ColumnName="gameId" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="chiphistories">
+            <EntityTypeMapping TypeName="dbModels.chiphistory">
+              <MappingFragment StoreEntitySet="chiphistory">
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="netChange" ColumnName="netChange" />
+                <ScalarProperty Name="gameId" ColumnName="gameId" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="complaints">
+            <EntityTypeMapping TypeName="dbModels.complaint">
+              <MappingFragment StoreEntitySet="complaints">
+                <ScalarProperty Name="action" ColumnName="action" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="chatLog" ColumnName="chatLog" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="reported" ColumnName="reported" />
+                <ScalarProperty Name="reporter" ColumnName="reporter" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="contestusers">
+            <EntityTypeMapping TypeName="dbModels.contestuser">
+              <MappingFragment StoreEntitySet="contestusers">
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="contestId" ColumnName="contestId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="events">
+            <EntityTypeMapping TypeName="dbModels.event">
+              <MappingFragment StoreEntitySet="events">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="eventName" ColumnName="eventName" />
+                <ScalarProperty Name="profileId" ColumnName="profileId" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="feedhistories">
+            <EntityTypeMapping TypeName="dbModels.feedhistory">
+              <MappingFragment StoreEntitySet="feedhistory">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="chipDiff" ColumnName="chipDiff" />
+                <ScalarProperty Name="fuid" ColumnName="fuid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="feedOwner" ColumnName="feedOwner" />
+                <ScalarProperty Name="fieldType" ColumnName="fieldType" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="friends">
+            <EntityTypeMapping TypeName="dbModels.friend">
+              <MappingFragment StoreEntitySet="friends">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="fuid" ColumnName="fuid" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gamehistories">
+            <EntityTypeMapping TypeName="dbModels.gamehistory">
+              <MappingFragment StoreEntitySet="gamehistory">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="winner" ColumnName="winner" />
+                <ScalarProperty Name="user4" ColumnName="user4" />
+                <ScalarProperty Name="user3" ColumnName="user3" />
+                <ScalarProperty Name="user2" ColumnName="user2" />
+                <ScalarProperty Name="user1" ColumnName="user1" />
+                <ScalarProperty Name="userCount" ColumnName="userCount" />
+                <ScalarProperty Name="isSeri" ColumnName="isSeri" />
+                <ScalarProperty Name="isCifte" ColumnName="isCifte" />
+                <ScalarProperty Name="isOkey" ColumnName="isOkey" />
+                <ScalarProperty Name="gamePot" ColumnName="gamePot" />
+                <ScalarProperty Name="gameCost" ColumnName="gameCost" />
+                <ScalarProperty Name="gameId" ColumnName="gameId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="gifts">
+            <EntityTypeMapping TypeName="dbModels.gift">
+              <MappingFragment StoreEntitySet="gifts">
+                <ScalarProperty Name="costType" ColumnName="costType" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+                <ScalarProperty Name="className" ColumnName="className" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="inventories">
+            <EntityTypeMapping TypeName="dbModels.inventory">
+              <MappingFragment StoreEntitySet="inventories">
+                <ScalarProperty Name="isEquipped" ColumnName="isEquipped" />
+                <ScalarProperty Name="expireDate" ColumnName="expireDate" />
+                <ScalarProperty Name="itemId" ColumnName="itemId" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="invites">
+            <EntityTypeMapping TypeName="dbModels.invite">
+              <MappingFragment StoreEntitySet="invites">
+                <ScalarProperty Name="acceptDate" ColumnName="acceptDate" />
+                <ScalarProperty Name="sendDate" ColumnName="sendDate" />
+                <ScalarProperty Name="accepted" ColumnName="accepted" />
+                <ScalarProperty Name="toUid" ColumnName="toUid" />
+                <ScalarProperty Name="fromUid" ColumnName="fromUid" />
+                <ScalarProperty Name="requestId" ColumnName="requestId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="notifications">
+            <EntityTypeMapping TypeName="dbModels.notification">
+              <MappingFragment StoreEntitySet="notifications">
+                <ScalarProperty Name="responded" ColumnName="responded" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="toUid" ColumnName="toUid" />
+                <ScalarProperty Name="fromName" ColumnName="fromName" />
+                <ScalarProperty Name="fromUid" ColumnName="fromUid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="dbModels.product">
+              <MappingFragment StoreEntitySet="products">
+                <ScalarProperty Name="storeId" ColumnName="storeId" />
+                <ScalarProperty Name="productUrl" ColumnName="productUrl" />
+                <ScalarProperty Name="imageUrl" ColumnName="imageUrl" />
+                <ScalarProperty Name="discountEnabled" ColumnName="discountEnabled" />
+                <ScalarProperty Name="discountFbCredits" ColumnName="discountFbCredits" />
+                <ScalarProperty Name="discountMoney" ColumnName="discountMoney" />
+                <ScalarProperty Name="realMoney" ColumnName="realMoney" />
+                <ScalarProperty Name="fbCredits" ColumnName="fbCredits" />
+                <ScalarProperty Name="chips" ColumnName="chips" />
+                <ScalarProperty Name="text" ColumnName="text" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="purchases">
+            <EntityTypeMapping TypeName="dbModels.purchase">
+              <MappingFragment StoreEntitySet="purchases">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="itemId" ColumnName="itemId" />
+                <ScalarProperty Name="profileId" ColumnName="profileId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="refs">
+            <EntityTypeMapping TypeName="dbModels.ref">
+              <MappingFragment StoreEntitySet="refs">
+                <ScalarProperty Name="ref1" ColumnName="ref" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="requests">
+            <EntityTypeMapping TypeName="dbModels.request">
+              <MappingFragment StoreEntitySet="requests">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="to" ColumnName="to" />
+                <ScalarProperty Name="from" ColumnName="from" />
+                <ScalarProperty Name="reqType" ColumnName="reqType" />
+                <ScalarProperty Name="reqId" ColumnName="reqId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rooms">
+            <EntityTypeMapping TypeName="dbModels.room">
+              <MappingFragment StoreEntitySet="rooms">
+                <ScalarProperty Name="static5" ColumnName="static5" />
+                <ScalarProperty Name="static4" ColumnName="static4" />
+                <ScalarProperty Name="static3" ColumnName="static3" />
+                <ScalarProperty Name="static2" ColumnName="static2" />
+                <ScalarProperty Name="static1" ColumnName="static1" />
+                <ScalarProperty Name="minEntry" ColumnName="minEntry" />
+                <ScalarProperty Name="maxChips" ColumnName="maxChips" />
+                <ScalarProperty Name="priority" ColumnName="priority" />
+                <ScalarProperty Name="minChips" ColumnName="minChips" />
+                <ScalarProperty Name="maxUsers" ColumnName="maxUsers" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="zoneId" ColumnName="zoneId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="stats">
+            <EntityTypeMapping TypeName="dbModels.stat">
+              <MappingFragment StoreEntitySet="stats">
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="storeitems">
+            <EntityTypeMapping TypeName="dbModels.storeitem">
+              <MappingFragment StoreEntitySet="storeitems">
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="featured" ColumnName="featured" />
+                <ScalarProperty Name="friendCost" ColumnName="friendCost" />
+                <ScalarProperty Name="fbRentCost" ColumnName="fbRentCost" />
+                <ScalarProperty Name="fbCost" ColumnName="fbCost" />
+                <ScalarProperty Name="cost" ColumnName="cost" />
+                <ScalarProperty Name="itemsLeft" ColumnName="itemsLeft" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="expirePeriod" ColumnName="expirePeriod" />
+                <ScalarProperty Name="isLimitedCount" ColumnName="isLimitedCount" />
+                <ScalarProperty Name="isLimitedTime" ColumnName="isLimitedTime" />
+                <ScalarProperty Name="isExpirable" ColumnName="isExpirable" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="className" ColumnName="className" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usergifts">
+            <EntityTypeMapping TypeName="dbModels.usergift">
+              <MappingFragment StoreEntitySet="usergifts">
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="toId" ColumnName="toId" />
+                <ScalarProperty Name="fromId" ColumnName="fromId" />
+                <ScalarProperty Name="giftId" ColumnName="giftId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="dbModels.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="weekStartChips" ColumnName="weekStartChips" />
+                <ScalarProperty Name="gameCntBonusToday" ColumnName="gameCntBonusToday" />
+                <ScalarProperty Name="recommended" ColumnName="recommended" />
+                <ScalarProperty Name="grandPrizeGiven" ColumnName="grandPrizeGiven" />
+                <ScalarProperty Name="cidtyId" ColumnName="cidtyId" />
+                <ScalarProperty Name="purchased" ColumnName="purchased" />
+                <ScalarProperty Name="oldChips" ColumnName="oldChips" />
+                <ScalarProperty Name="lastIp" ColumnName="lastIp" />
+                <ScalarProperty Name="inviter" ColumnName="inviter" />
+                <ScalarProperty Name="ref" ColumnName="ref" />
+                <ScalarProperty Name="registrationDate" ColumnName="registrationDate" />
+                <ScalarProperty Name="friendCount" ColumnName="friendCount" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="lastBonusGiven" ColumnName="lastBonusGiven" />
+                <ScalarProperty Name="suspendTill" ColumnName="suspendTill" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="lastSeen" ColumnName="lastSeen" />
+                <ScalarProperty Name="chips" ColumnName="chips" />
+                <ScalarProperty Name="birthDate" ColumnName="birthDate" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="userstats">
+            <EntityTypeMapping TypeName="dbModels.userstat">
+              <MappingFragment StoreEntitySet="userstats">
+                <ScalarProperty Name="gamesPlayedDaily" ColumnName="gamesPlayedDaily" />
+                <ScalarProperty Name="maxChips" ColumnName="maxChips" />
+                <ScalarProperty Name="maxChipsWon" ColumnName="maxChipsWon" />
+                <ScalarProperty Name="gamesRiskyLost" ColumnName="gamesRiskyLost" />
+                <ScalarProperty Name="gamesRiskyWon" ColumnName="gamesRiskyWon" />
+                <ScalarProperty Name="gamesRisky" ColumnName="gamesRisky" />
+                <ScalarProperty Name="gamesWon" ColumnName="gamesWon" />
+                <ScalarProperty Name="gamesPlayed" ColumnName="gamesPlayed" />
+                <ScalarProperty Name="consecutiveLogins" ColumnName="consecutiveLogins" />
+                <ScalarProperty Name="maxConsecutiveWins" ColumnName="maxConsecutiveWins" />
+                <ScalarProperty Name="consecutiveWins" ColumnName="consecutiveWins" />
+                <ScalarProperty Name="firstGamePlayed" ColumnName="firstGamePlayed" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="profileId" ColumnName="profileId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="weeklytops">
+            <EntityTypeMapping TypeName="dbModels.weeklytop">
+              <MappingFragment StoreEntitySet="weeklytops">
+                <ScalarProperty Name="delta" ColumnName="delta" />
+                <ScalarProperty Name="weekStartChips" ColumnName="weekStartChips" />
+                <ScalarProperty Name="chips" ColumnName="chips" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="profileId" ColumnName="profileId" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="zones">
+            <EntityTypeMapping TypeName="dbModels.zone">
+              <MappingFragment StoreEntitySet="zones">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="dbModels" ZoomLevel="40" >
+        <EntityTypeShape EntityType="dbModels.announcement" Width="1.5" PointX="0.75" PointY="0.75" Height="2.5571907552083335" />
+        <EntityTypeShape EntityType="dbModels.chatmessage" Width="1.5" PointX="2.75" PointY="0.75" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="dbModels.chiphistory" Width="1.5" PointX="2.75" PointY="3.75" Height="1.9802864583333322" />
+        <EntityTypeShape EntityType="dbModels.complaint" Width="1.5" PointX="4.75" PointY="0.75" Height="2.5571907552083335" />
+        <EntityTypeShape EntityType="dbModels.contestuser" Width="1.5" PointX="4.75" PointY="4.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="dbModels.event" Width="1.5" PointX="6.75" PointY="0.75" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="dbModels.feedhistory" Width="1.5" PointX="0.75" PointY="6.75" Height="2.5571907552083317" />
+        <EntityTypeShape EntityType="dbModels.friend" Width="1.5" PointX="6.75" PointY="3.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbModels.gamehistory" Width="1.5" PointX="6.75" PointY="6.75" Height="3.7109993489583317" />
+        <EntityTypeShape EntityType="dbModels.gift" Width="1.5" PointX="2.75" PointY="7.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="dbModels.inventory" Width="1.5" PointX="8.75" PointY="0.75" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="dbModels.invite" Width="1.5" PointX="8.75" PointY="3.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="dbModels.notification" Width="1.5" PointX="8.75" PointY="7.75" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="dbModels.product" Width="1.5" PointX="10.75" PointY="0.75" Height="3.3263964843750031" />
+        <EntityTypeShape EntityType="dbModels.purchase" Width="1.5" PointX="10.75" PointY="5.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbModels.ref" Width="1.5" PointX="10.75" PointY="8.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbModels.request" Width="1.5" PointX="0.75" PointY="11.75" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="dbModels.room" Width="1.5" PointX="2.75" PointY="11.75" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="dbModels.stat" Width="1.5" PointX="4.75" PointY="11.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbModels.storeitem" Width="1.5" PointX="6.75" PointY="11.75" Height="4.4802050781250031" />
+        <EntityTypeShape EntityType="dbModels.usergift" Width="1.5" PointX="8.75" PointY="11.75" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="dbModels.user" Width="1.5" PointX="10.75" PointY="11.75" Height="5.4417122395833282" />
+        <EntityTypeShape EntityType="dbModels.userstat" Width="1.5" PointX="12.75" PointY="0.75" Height="3.9033007812500102" />
+        <EntityTypeShape EntityType="dbModels.weeklytop" Width="1.5" PointX="12.75" PointY="5.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="dbModels.zone" Width="1.5" PointX="12.75" PointY="9.75" Height="1.4033821614583246" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
